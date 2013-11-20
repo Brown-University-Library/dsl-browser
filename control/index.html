@@ -1,0 +1,309 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>DSL Wall Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- from http://stackoverflow.com/questions/6052485/website-with-flexible-width-for-different-mobile-devices -->
+    
+    <link rel="stylesheet" href="../styles/isotope-styles.css"> </link>
+    <link rel="stylesheet" href="../styles/display-control.css"> </link>
+  </head>
+  <body class="demos ">
+    <section id="content">
+      <p id="filters" style="height: 5%">
+        Show <a href="#" data-filter="*">everything</a> | 
+        <a href="#" data-filter=".teaching">teaching</a> |
+        <a href="#" data-filter=".research">research</a> |
+        <a href="#" data-filter=".images">images</a>
+      </p>
+      <!--
+      <div id="item-details">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+            <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet...", comes from a line in section 1.10.32.</p>
+      </div>-->
+      <div id="container" style="height: 80%;">
+
+        <div data-id="0" class="isotope-item banner s32" style=""
+          onclick="update_wall(1)">
+          <h1>Welcome to the Patrick&nbsp;Ma Digital Scholarship Lab</h1>
+          <p>Select a topic to view on the display wall, or use the filters above to narrow your options.</p>
+        </div>
+        <!--
+        <div data-id="1" class="isotope-item research archeology s21" style="background-image:url(images/icons/monkey.png)"
+          onclick="update_wall(1)">
+          <h3>Archeology Workbench 1</h3>
+        </div>
+        <div data-id="2" class="isotope-item research archeology"
+          onclick="update_wall(2)">
+          <h3>Archeology Workbench 2</h3>
+        </div>
+        -->
+        <div data-id="3" class="isotope-item research archeology"
+          onclick="update_wall(3)">
+          <h3>Archaeology in the field</h3>
+        </div>
+        <div data-id="4" class="isotope-item research archeology"
+          onclick="update_wall(4)">
+          <h3>Archaeology in the DSL</h3>
+        </div>
+        <div data-id="5" class="isotope-item teaching" onclick="update_wall(5)">
+          <h3>Massimo Riva class</h3>
+        </div>
+        <div data-id="6" class="isotope-item teaching performance"
+          onclick="update_wall(6)">
+          <h3>John Cayley performance</h3>
+        </div>
+        <div data-id="7" class="isotope-item teaching" onclick="update_wall(7)">
+          <h3>Digital Storytelling</h3>
+        </div>
+        <div data-id="8" class="isotope-item teaching" onclick="update_wall(8)">
+          <h3>Exhibition design</h3>
+        </div>
+        <div data-id="9" class="isotope-item teaching" onclick="update_wall(9)">
+          <h3>Sobral 1</h3>
+        </div>
+        <div data-id="10" class="isotope-item teaching" onclick="update_wall(10)">
+          <h3>Sobral 2</h3>
+        </div>
+        <div data-id="11" class="isotope-item images" onclick="update_wall(11)">
+          <h3>The Moon</h3>
+        </div>
+        <div data-id="12" class="isotope-item visualization" onclick="update_wall(12)">
+          <h3>Wood maps</h3>
+        </div>
+        <div data-id="13" class="isotope-item visualization blackText" onclick="update_wall(13)"
+         style="background-image:url(images/icons/Cars.png)">
+          <h3>Cars</h3>
+        </div>
+        <div data-id="14" class="isotope-item visualization" onclick="update_wall(14)">
+          <h3>What if?</h3>
+        </div>
+        <div data-id="15" class="isotope-item visualization" onclick="update_wall(15)">
+          <h3>Quickest path</h3>
+        </div>
+        <div data-id="16" class="isotope-item visualization blackText" onclick="update_wall(16)"
+         style="background-image:url(images/icons/Basketball.png)">
+          <h3>Basketball strategy</h3>
+        </div>
+        <div data-id="17" class="isotope-item images" onclick="update_wall(17)">
+          <h3>Orwell's 1984</h3>
+        </div>
+        <div data-id="18" class="isotope-item images" onclick="update_wall(18)">
+          <h3>Literature on a Palm Leaf</h3>
+        </div>
+        <div data-id="19" class="isotope-item images" onclick="update_wall(19)">
+          <h3>Bart&oacute;k</h3>
+        </div>
+        <div data-id="20" class="isotope-item images" onclick="update_wall(20)">
+          <h3>Renaissance manuscript</h3>
+        </div>
+        <div data-id="21" class="isotope-item images blackText" onclick="update_wall(21)"
+         style="background-image:url(images/icons/Elliot_bible.png)">
+          <h3>The Elliot Bible</h3>
+        </div>
+        <div data-id="22" class="isotope-item images" onclick="update_wall(22)">
+          <h3>A March dedicated to Lincoln</h3>
+        </div>
+        <div data-id="23" class="isotope-item images" onclick="update_wall(23)"
+         style="background-image:url(images/icons/Garibaldi.png)">
+          <h3>Garibaldi</h3>
+        </div>
+        <div data-id="24" class="isotope-item teaching" onclick="update_wall(24)">
+          <h3>Digital Story 1</h3>
+        </div>
+        <div data-id="25" class="isotope-item teaching" onclick="update_wall(25)">
+          <h3>Digital Story 2</h3>
+        </div>
+        <div data-id="26" class="isotope-item teaching" onclick="update_wall(26)">
+          <h3>Digital Story 3</h3>
+        </div>
+        <div data-id="27" class="isotope-item images kim-arcand"
+          onclick="update_wall(27)">
+          <h3>Intro</h3>
+        </div>
+        <div data-id="28" class="isotope-item images kim-arcand"
+          onclick="update_wall(28)"  style="background-image:url(images/icons/City_lights.png)">
+          <h3>City Lights</h3>
+        </div>
+        <div data-id="29" class="isotope-item images kim-arcand s22"
+          onclick="update_wall(29)" style="background-image:url(images/icons/Mars.png)">
+          <h3>Mount Sharp</h3>
+        </div>
+        <div data-id="30" class="isotope-item images kim-arcand s22"  style="background-image:url(images/icons/Sun.png)"
+          onclick="update_wall(30)">
+          <h3>The Sun</h3>
+          <div class="details">
+            <!-- <button>Close</button> -->
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+            <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet...", comes from a line in section 1.10.32.</p>
+          </div>
+        </div>
+        <div data-id="31" class="isotope-item images kim-arcand"  style="background-image:url(images/icons/Vela.png)"
+          onclick="update_wall(31)">
+          <h3>Vela</h3>
+        </div>
+        <div data-id="32" class="isotope-item images kim-arcand" style="background-image:url(images/icons/Carina.png)"
+          onclick="update_wall(32)">
+          <h3>Carina Nebula</h3>
+        </div>
+        <div data-id="33" class="isotope-item images kim-arcand"
+          onclick="update_wall(33)">
+          <h3>G Center</h3>
+        </div>
+        <div data-id="34" class="isotope-item images kim-arcand"
+          onclick="update_wall(34)">
+          <h3>Andromeda Galaxy</h3>
+        </div>
+        <div data-id="35" class="isotope-item images kim-arcand"
+          onclick="update_wall(35)">
+          <h3>Deep Field</h3>
+        </div>
+        <div data-id="36" class="isotope-item promotion" onclick="update_wall(36)">
+          <h3>Hackfest</h3>
+        </div>
+        <div data-id="37" class="isotope-item images" onclick="update_wall(37)">
+          <h3>DSL Plan</h3>
+        </div>
+        <div data-id="38" class="isotope-item images" onclick="update_wall(38)" style="background-image:url(images/icons/Aral.png)">
+          <h3>Aral Sea</h3>
+        </div>
+        <div data-id="39" class="isotope-item images" onclick="update_wall(39)">
+          <h3>Chemical model</h3>
+        </div>
+        <div data-id="40" class="isotope-item images" onclick="update_wall(40)">
+          <h3>Australian Bushfires</h3>
+        </div>
+        <div data-id="41" class="isotope-item images" onclick="update_wall(41)">
+          <h3>Rome</h3>
+        </div>
+        <div data-id="42" class="isotope-item visualization" onclick="update_wall(42)">
+          <h3>Animals</h3>
+        </div>
+        <div data-id="43" class="isotope-item images" onclick="update_wall(43)">
+          <h3>Photo BG</h3>
+        </div>
+        <div data-id="44" class="isotope-item images" onclick="update_wall(44)">
+          <h3>Diane</h3>
+        </div>
+        <!-- EXAMPLE ENTRY
+        <div class="element other nonmetal   " data-symbol="H" data-category="other">
+          <p class="number">1</p>
+          <h3 class="symbol">H</h3>
+          <h2 class="name">Hydrogen</h2>
+          <p class="weight">1.00794</p>
+        </div>
+      --></div>
+        <script src="../scripts/jquery-1.7.1.min.js"></script>
+        <script src="../scripts/jquery.isotope.min.js"></script>
+        <script>
+  
+      var $container;
+      var historyStack = new HistoryStack('*');
+  
+      var IS_CART = (window.location.search.search('CART') !== -1);
+  
+      // HISTORY STACK
+  
+      function HistoryStack (initialFilter) {
+  
+        this.stack = [initialFilter];
+      }
+  
+      HistoryStack.prototype.add = function (selector) {
+        this.stack.push(selector);
+      };
+  
+      HistoryStack.prototype.goBack = function () {
+         // $container = $('#container');
+         // this.stack.pop(); // Get rid of current entry
+         alert("J: " + this.stack.pop());
+         var xx = this.stack.pop();
+         alert("K: " + xx);
+         $container.isotope({ filter: xx });
+      };
+  
+  /*
+      var historyStack = {
+  
+        stack: [],
+        add: new function (selector) {
+          this.stack.push(selector);
+        },
+        goBack: new function () {
+           $container = $('#container');
+           $container.isotope({ filter: this.stack.pop() });
+        }
+      };
+  */
+      $(function(){
+        
+        $container = $('#container');
+        
+        $container.isotope({
+          itemSelector: '.isotope-item',
+          layoutMode : 'masonry',
+          masonry: {
+            columnWidth: 75,
+            gutterWidth: 5
+          }
+        });
+  
+        // When one of the tiles are clicked ...
+  
+        if (IS_CART) {
+  
+          $('.isotope-item').click(function() {
+  
+            var slideId = $(this).attr('data-id');
+            $.get("trigger.php", { slide: slideId } ); // Update wall
+  
+            // Filter out everything except this item and show details
+  
+            var details = $(this).children('div');
+  
+            $container.isotope({ 
+              filter: '#container div[data-id="' + slideId + '"]',
+              onLayout: function( $elems, instance ) {
+                details.children('button').click(function () { 
+                  historyStack.goBack();
+                });
+                historyStack.add('#container div[data-id="' + slideId + '"]');
+                details.fadeIn('slow');  // Reveal content
+  
+                this.isotope({ onLayout: null }); // Clear onLayout handler
+              }
+            }); // Show only selected tile
+  
+            // TO DO: append a "close" button which will unfilter and re-hide the content
+  
+            return false;
+          });
+        }
+      });
+      
+      function update_wall(slideId) {
+        $.get("trigger.php", { slide: slideId } );
+        if (IS_CART) {
+          var selector = '#container div[data-id="' + slideId + '"]';
+          $container.isotope({ 
+            filter: selector
+          }); // this can be preloaded
+        }
+      }
+  
+      // filter items when filter link is clicked
+  
+      $('#filters a').click(function() {
+  
+        // Fade out any visible details
+        $('#container .isotope-item > div').fadeOut();
+  
+        var selector = $(this).attr('data-filter');
+        $container.isotope({ filter: selector });
+        return false;
+      });
+      
+    </script>
+  </section>
+  </body>
+</html>

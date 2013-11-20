@@ -1,0 +1,113 @@
+
+
+#content{
+  margin:0px;
+}
+
+.isotope-item{
+  /* margin: 10px; */
+  margin-bottom:5px;
+  padding:5px;
+
+  width:60px;
+  height:60px;
+  background-size:100%;
+
+  background:#ffa;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+/* Item types */
+
+.isotope-item.teaching{
+  background-color:#f00;
+}
+.isotope-item.research{
+  background-color:#2f2;
+}
+.isotope-item.images{
+  background-color:#33f;
+  color:white;
+}
+.isotope-item.banner{
+  background-color:black;
+}
+
+.isotope-item h3{
+  margin:0;
+  padding:0;
+  /* background-color: rgba(0,0,0,0.5); */
+  cursor:default;
+
+  font-size:80%;
+  line-height:1em;
+}
+
+.isotope-item.blackText,
+.isotope-item.blackText *{
+  color:black;
+}
+
+/* Items of different dimensions */
+
+.isotope-item.s21{
+  width:135px;
+  height:60px;
+}
+
+.isotope-item.s21 h3{
+  font-size:100%;
+}
+
+.isotope-item.s32{
+  width:195px;
+  height:135px;
+}
+.isotope-item.s32 h1{
+  font-size:150%;
+}
+.isotope-item.s32 p{
+  line-height:1em;
+}
+
+.isotope-item.s31 h3{
+  font-size:100%;
+}
+
+.isotope-item.s22{
+  width:135px;
+  height:135px;
+  font-size:200%;
+}
+
+.isotope-item.s22 div{
+  left:150px;
+}
+
+/* Item details */
+
+.isotope-item div{
+  position:fixed;
+  top:0px;
+  left:140px;
+  width:500%;
+  display:none; /* Hidden by default */
+  font-size:50%;
+  font-weight:normal;
+  /*      border: 1px solid red; */
+  overflow:auto;
+}
+
+
+#item-details{
+  position:fixed;
+  background-color:red;
+  top:0;
+  left:200px;
+  /* width: 1000px; */
+
+}
+
+

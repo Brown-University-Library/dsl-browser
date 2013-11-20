@@ -1,0 +1,59 @@
+
+
+html,
+body{
+  height:100%;
+}
+
+body{
+  background-image:url('materials/photo_bg.png');
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+#nav{
+  position:absolute;
+  /*top:2160px; BOTTOM */
+  top:0;
+  left:0;
+
+  width:100px;
+  height:100px;
+}
+
+/* Hide pop-up navigation unless body has class show-nav*/
+
+#nav{
+  display:none
+}
+
+.show-nav #nav {
+  display: block;
+}
+
+/* Rollover button that pops up the navigation */
+
+#nav #show-nav-button{
+  background-image: url('../images/nav-icon.png');
+  width:512px;
+  height:512px;
+}
+
+#nav iframe{
+  display:none;
+}
+
+#nav:hover{
+  width:1920px;
+  height:1080px;
+}
+
+#nav:hover #show-nav-button{
+  display:none;
+}
+
+#nav:hover iframe{
+  display:block;
+  width:1920px;
+  height:1080px;
+}

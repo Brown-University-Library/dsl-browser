@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <script>
+      
+    </script>
+    <style>      
+
+      body{
+        margin:0;
+        border:0;
+        padding:0 10%;
+        background:red;
+        font-family: sans-serif;
+      }
+      
+      section{
+        font-size:250%;
+        display:none;
+        margin:0;
+        padding:0;
+        width:80%;
+      }
+      
+      section.size-small-1 {
+        font-size: 200%;
+      }      
+      section.size-small-2 {
+        font-size: 175%;
+      }      
+      section.size-large-1 {
+        font-size: 300%;
+      }
+      
+      section h1 { 
+        font-size: 120%;
+        margin: 0;
+      }
+      
+      section p { 
+        margin: 0.3em 0;
+      }
+      
+      section p.credits {
+        border-top: 1px solid black;
+        font-size: 50%;
+        font-style: italics;
+      }
+      
+      section#s4{
+        /* display:block; */
+      }
+      section{
+        position:absolute;
+        top:50%;
+        height:10em;
+        margin-top:-5em
+      }
+    </style>
+    <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="http://js.pusher.com/2.0/pusher.min.js" type="text/javascript"></script>
+    <script>
+      
+      var currentSlide;
+      
+      // Enable pusher logging - don't include this in production
+      
+      Pusher.log = function(message) {
+        if (window.console && window.console.log) window.console.log(message);
+      };
+      
+      var pusher = new Pusher('ccd0e24bbd911bcef19d');
+      var channel = pusher.subscribe('DSL-1');
+      channel.bind('my_event', function(data) {
+        changeSlide(data);
+      });
+      
+      function changeSlide(slideNo) {
+        // alert('s' + slideNo);
+        if (currentSlide !== undefined) {
+          currentSlide.fadeOut('slow', function () {  
+          });
+        }
+        
+        currentSlide = $('#s' + slideNo);
+        currentSlide.fadeIn();
+      }
+
+    </script>
+  </head>
+  <body>
+    <section id="s1"> </section>
+    <section id="s2"> </section>
+    <section id="s3"> This is a typical activity of an Archaeologist in the in the field. But how to
+      perform teh same sorting with digital objects ...? </section>
+    <section id="s4">
+      <p>Archaeologists have used the DSL as a digital "sorting table." Thumbnails of the field
+        objects are on the left, and a full-sized view on the right.</p>
+      <p>The DSL display wall is both large and high-resolution, allowing the researcher to look at
+        hundreds of objects at a time for comparison purposes. </p>
+    </section>
+    <section id="s5">
+      <p>Here, Massimo Riva's students use the wall to simultaneously show a document as well as a
+        visualization of that document.</p>
+    </section>
+    <section id="s6"> A performance of multimedia poetry as part of John Cayley's class in the fall
+      of 2012. </section>
+    <section id="s7"> Digital Storytelling is the appliction of narrative form to multimedia tools. </section>
+    <section id="s8"> The DSL is a great space for collaborative work. Here, public humanities
+      students work to sort and organize digital objects into a design for a museum exhibition. </section>
+    <section id="s9"> Sobral 1 </section>
+    <section id="s10"> Sobral 2 </section>
+    <section id="s11">
+      <p> This is a recent photo of the surface of the moon, taken during the summer of 2012.</p>
+      <p>In the upper center, you can clearly make out the remains of the 1971 Apollo mission
+        &mdash; even down to the tracks left by the astronauts!</p>
+    </section>
+    <section id="s12"> Wood maps </section>
+    <section id="s13"> Cars </section>
+    <section id="s14"> What if? </section>
+    <section id="s15"> Quickest path </section>
+    <section id="s16"> Basketball strategy </section>
+    <section id="s17"> 1984 </section>
+    <section id="s18"> Literature on a palm leaf </section>
+    <section id="s19"> Bart&oacute;k </section>
+    <section id="s20"> Renaissance manuscript </section>
+    <section id="s21"> Elliot Bible </section>
+    <section id="s22"> Lincoln march </section>
+    <section id="s23"> Garibaldi </section>
+    <section id="s24"> Digital story 1 </section>
+    <section id="s25"></section>
+    <section id="s26"></section>
+    <section id="s27"></section>
+    <section id="s28"></section>
+    <section id="s29"></section>
+    <section id="s30" class="size-small-2">
+      <h1>Our Tempestuous Sun</h1>
+      <p>When our nearest star is stormy, it results in streams of energized particles that can
+        create auroras here in Earth, and can even disrupt cell phones and power grids.</p>
+      <p>Observing our Sun in ultraviolet light, we see its turbulent atmosphere, where the loops
+        are constantly changing areas of energy and magnetism that drive what is known as "space
+        weather." The massive ejection shown on the lower left erupted on August 31, 2012.</p>
+      <p class="credits">Credits: image from NASA/SDO; text and design by Kim Arcand</p>
+    </section>
+    <section id="s31"></section>
+    <section id="s32"></section>
+    <section id="s33"></section>
+    <section id="s34"></section>
+    <section id="s35"></section>
+    <section id="s36"></section>
+    <section id="s37"></section>
+    <section id="s38"></section>
+    <section id="s39"></section>
+    <section id="s40"></section>
+    <section id="s41"></section>
+    <section id="s42"></section>
+    <section id="s43"></section>
+    <section id="s44"></section>
+    <script>
+            changeSlide(43);  // Start with photo BG
+    </script>
+  </body>
+</html>
