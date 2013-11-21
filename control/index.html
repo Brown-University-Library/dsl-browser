@@ -16,28 +16,47 @@
         <a href="#" data-filter=".research">research</a> |
         <a href="#" data-filter=".images">images</a>
       </p>
+      
+      
+      
+      <!-- 
+        
+
+        
+        // Load tiles
+        
+        $.getJSON( "../scripts/image-list-2.json", function( imageList ) {
+        
+        var tileCode = '';
+        
+        $.each( imageList, function( index, imageData ) {
+          tileCode += "<div class='isotope-item " + imageData.categories +
+                           "onclick='update_wall(" + index + "'>" +
+                        "<h3>" + name + "</h3>" +
+                      "</div>";
+        });
+       
+        $('#container').append(tileCode);
+        
+        
+        -->
+      
+      
       <!--
       <div id="item-details">
             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
             <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet...", comes from a line in section 1.10.32.</p>
       </div>-->
       <div id="container" style="height: 80%;">
+        
+        <!--
 
         <div data-id="0" class="isotope-item banner s32" style=""
           onclick="update_wall(1)">
           <h1>Welcome to the Patrick&nbsp;Ma Digital Scholarship Lab</h1>
           <p>Select a topic to view on the display wall, or use the filters above to narrow your options.</p>
         </div>
-        <!--
-        <div data-id="1" class="isotope-item research archeology s21" style="background-image:url(images/icons/monkey.png)"
-          onclick="update_wall(1)">
-          <h3>Archeology Workbench 1</h3>
-        </div>
-        <div data-id="2" class="isotope-item research archeology"
-          onclick="update_wall(2)">
-          <h3>Archeology Workbench 2</h3>
-        </div>
-        -->
+
         <div data-id="3" class="isotope-item research archeology"
           onclick="update_wall(3)">
           <h3>Archaeology in the field</h3>
@@ -133,7 +152,6 @@
           onclick="update_wall(30)">
           <h3>The Sun</h3>
           <div class="details">
-            <!-- <button>Close</button> -->
             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
             <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet...", comes from a line in section 1.10.32.</p>
           </div>
@@ -185,17 +203,11 @@
         <div data-id="44" class="isotope-item images" onclick="update_wall(44)">
           <h3>Diane</h3>
         </div>
-        <!-- EXAMPLE ENTRY
-        <div class="element other nonmetal   " data-symbol="H" data-category="other">
-          <p class="number">1</p>
-          <h3 class="symbol">H</h3>
-          <h2 class="name">Hydrogen</h2>
-          <p class="weight">1.00794</p>
-        </div>
-      --></div>
-        <script src="../scripts/jquery-1.7.1.min.js"></script>
-        <script src="../scripts/jquery.isotope.min.js"></script>
-        <script>
+      -->
+      </div>
+        <script type="text/javascript" src="../scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="../scripts/jquery.isotope.min.js"></script>
+        <script type="text/javascript">
   
       var $container;
       var historyStack = new HistoryStack('*');
@@ -239,47 +251,75 @@
         
         $container = $('#container');
         
-        $container.isotope({
-          itemSelector: '.isotope-item',
-          layoutMode : 'masonry',
-          masonry: {
-            columnWidth: 75,
-            gutterWidth: 5
-          }
-        });
-  
-        // When one of the tiles are clicked ...
-  
-        if (IS_CART) {
-  
-          $('.isotope-item').click(function() {
-  
-            var slideId = $(this).attr('data-id');
-            $.get("trigger.php", { slide: slideId } ); // Update wall
-  
-            // Filter out everything except this item and show details
-  
-            var details = $(this).children('div');
-  
-            $container.isotope({ 
-              filter: '#container div[data-id="' + slideId + '"]',
-              onLayout: function( $elems, instance ) {
-                details.children('button').click(function () { 
-                  historyStack.goBack();
-                });
-                historyStack.add('#container div[data-id="' + slideId + '"]');
-                details.fadeIn('slow');  // Reveal content
-  
-                this.isotope({ onLayout: null }); // Clear onLayout handler
-              }
-            }); // Show only selected tile
-  
-            // TO DO: append a "close" button which will unfilter and re-hide the content
-  
-            return false;
+        // Load image data and generate tile HTML
+        
+        $.getJSON( "../scripts/image-list.json", function( imageList ) {
+          
+          var tileCode = '';
+          var classes;
+          
+          $.each( imageList, function( index, imageData ) {
+          
+            classes = imageData.category + 
+                      (imageData.tile_height !== undefined ? ' s' + imageData.tile_height + imageData.tile_width : '');
+                      
+            tileCode +=     "<div " 
+                          +  "class='isotope-item " + classes + "' "
+                          +  "onclick='update_wall(" + index + ")'"
+                          +  (imageData.icon_image !== undefined ? " style='background-image:url(\"" + imageData.icon_image + "\")'" : '')
+                          + ">"
+                          +  "<h3>" + imageData.name + "</h3>"
+                          + (imageData.blurb !== undefined ? imageData.blurb : '') 
+                          + "</div>\n\n";
           });
-        }
+          
+          $container.append(tileCode);
+            
+          // Apply isotope to tiles
+  
+          $container.isotope({
+            itemSelector: '.isotope-item',
+            layoutMode : 'masonry',
+            masonry: {
+              columnWidth: 75,
+              gutterWidth: 5
+            }
+          });
+  
+          // When one of the tiles are clicked ...
+    
+          if (IS_CART) {
+    
+            $('.isotope-item').click(function() {
+    
+              var slideId = $(this).attr('data-id');
+              $.get("trigger.php", { slide: slideId } ); // Update wall
+    
+              // Filter out everything except this item and show details
+    
+              var details = $(this).children('div');
+    
+              $container.isotope({ 
+                filter: '#container div[data-id="' + slideId + '"]',
+                onLayout: function( $elems, instance ) {
+                  details.children('button').click(function () { 
+                    historyStack.goBack();
+                  });
+                  historyStack.add('#container div[data-id="' + slideId + '"]');
+                  details.fadeIn('slow');  // Reveal content
+    
+                  this.isotope({ onLayout: null }); // Clear onLayout handler
+                }
+              }); // Show only selected tile
+    
+              // TO DO: append a "close" button which will unfilter and re-hide the content
+    
+              return false;
+            });
+          }
+        }); 
       });
+        
       
       function update_wall(slideId) {
         $.get("trigger.php", { slide: slideId } );

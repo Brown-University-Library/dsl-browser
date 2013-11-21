@@ -1,4 +1,7 @@
 
+body {
+  background-color: black;
+}
 
 #content{
   margin:0px;
@@ -84,6 +87,16 @@
 
 .isotope-item.s22 div{
   left:150px;
+}
+
+/* Special cases */
+
+.banner h3 {
+  font-size: 150%; 
+}
+
+.banner p {
+  
 }
 
 /* Item details */
