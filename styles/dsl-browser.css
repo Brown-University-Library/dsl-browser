@@ -35,8 +35,9 @@ body{
 
 #nav #show-nav-button{
   background-image: url('../images/nav-icon.png');
-  width:512px;
-  height:512px;
+  background-size:contain;
+  width:100px;
+  height:100px;
 }
 
 #nav iframe{
