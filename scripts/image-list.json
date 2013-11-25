@@ -134,13 +134,21 @@
   {
     "name": "Intro",
     "category": "isotope-item images kim-arcand",
-    "image_url": "materials/Kim/0_Intro.png"
+    "image_url": "materials/Kim/0_Intro.png",
+    "secondary_image_urls": [
+      "materials/Kim/0_Intro_cart1.jpg",
+      "materials/Kim/0_Intro_cart2.jpg"
+    ]
   },
   {
     "name": "City Lights",
     "category": "isotope-item images kim-arcand",
     "icon_image": "images/icons/City_lights.png",
-    "image_url": "materials/Kim/1_CityLights.png"
+    "image_url": "materials/Kim/1_CityLights.png",
+    "secondary_image_urls": [
+      "materials/Kim/1_CityLights_cart1.jpg",
+      "materials/Kim/1_CityLights_cart2.jpg"
+    ]
   },
   {
     "name": "Mount Sharp",
