@@ -3,6 +3,7 @@
 html,
 body{
   height:100%;
+  overflow: hidden;
 }
 
 body{
@@ -34,27 +35,35 @@ body{
 /* Rollover button that pops up the navigation */
 
 #nav #show-nav-button{
-  background-image: url('../images/nav-icon.png');
+  
+  /*background-image: url('../images/nav-icon.png');*/
+  background-image: url('../images/DSL-Logo.png');
   background-size:contain;
+  
   width:100px;
-  height:100px;
+  height:42px;
+  
+  margin: 20px 0 0 20px; /* Matches the body padding in isotope-styles.css */
 }
 
 #nav iframe{
   display:none;
+  border: none;
 }
 
 #nav:hover{
   width:1920px;
   height:1080px;
+  background:black;
 }
 
 #nav:hover #show-nav-button{
-  display:none;
+  /*display:none;*/
 }
 
 #nav:hover iframe{
   display:block;
   width:1920px;
-  height:1080px;
+  /*height:1080px;*/
+  height:1038px;
 }
