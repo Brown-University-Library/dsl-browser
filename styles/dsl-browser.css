@@ -49,6 +49,7 @@ body{
 #nav iframe{
   display:none;
   border: none;
+  overflow: hidden;
 }
 
 #nav:hover{
