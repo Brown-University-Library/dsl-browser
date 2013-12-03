@@ -20,6 +20,8 @@ body{
 
   width:100px;
   height:100px;
+  
+  overflow: hidden;
 }
 
 /* Hide pop-up navigation unless body has class show-nav*/
@@ -54,7 +56,7 @@ body{
 
 #nav:hover{
   width:1920px;
-  height:1080px;
+  height:1038px; /* 1080 - 42 */
   background:black;
 }
 
